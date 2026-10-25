@@ -1,0 +1,49 @@
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="header__title">To-Do List App</h1>
+  </header>
+
+  <!-- Add form -->
+  <section class="card add-card">
+    <form class="add-form" (ngSubmit)="addTodo()" #todoForm="ngForm">
+      <input id="todo-input" class="add-form__input" type="text" placeholder="What needs to be done?"
+        [(ngModel)]="newTitle" name="newTitle" autocomplete="off" [disabled]="adding" required />
+      <button id="add-btn" class="add-form__btn" type="submit" [disabled]="adding || !newTitle.trim()">
+        {{ adding ? 'Adding…' : 'Add' }}
+      </button>
+    </form>
+  </section>
+
+  <!-- Error banner -->
+  <div class="error-banner" *ngIf="error">
+    ⚠️ {{ error }}
+  </div>
+
+  <!-- Loading -->
+  <div class="loading" *ngIf="loading">
+    Loading todos…
+  </div>
+
+  <!-- Todo list -->
+  <section class="card list-card" *ngIf="!loading">
+    <p class="list__empty" *ngIf="todos.length === 0">
+      No todos yet — add one above!
+    </p>
+
+    <ul class="list" *ngIf="todos.length > 0">
+      <li class="list__item" *ngFor="let todo of todos">
+        <span class="list__bullet">✔</span>
+        <span class="list__text">{{ todo.title }}</span>
+        <span class="list__date">{{ todo.createdAt | date:'MMM d, y, h:mm a' }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    {{ todos.length }} item{{ todos.length !== 1 ? 's' : '' }} total
+  </footer>
+
+</div>

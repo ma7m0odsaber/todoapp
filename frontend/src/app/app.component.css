@@ -1,0 +1,160 @@
+/* ── Layout ── */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+}
+
+.header__sub {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* ── Card ── */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+}
+
+/* ── Add Form ── */
+.add-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.add-form__input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.add-form__input:focus {
+  border-color: #4f46e5;
+}
+
+.add-form__input:disabled {
+  background: #f9fafb;
+}
+
+.add-form__btn {
+  padding: 0.65rem 1.35rem;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  white-space: nowrap;
+}
+
+.add-form__btn:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.add-form__btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Error Banner ── */
+.error-banner {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ── Loading ── */
+.loading {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+/* ── Todo List ── */
+.list-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.list__empty {
+  padding: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s;
+}
+
+.list__item:last-child {
+  border-bottom: none;
+}
+
+.list__item:hover {
+  background: #f9fafb;
+}
+
+.list__bullet {
+  color: #4f46e5;
+  font-size: 0.85rem;
+}
+
+.list__text {
+  font-size: 0.95rem;
+  color: #111827;
+  word-break: break-word;
+}
+
+.list__date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  padding-top: 0.5rem;
+}
